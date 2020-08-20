@@ -2,3 +2,7 @@
 	path = shared-dotfiles
 	url = https://github.com/bpmckee/shared-dotfiles.git
 	ignore = dirty
+[submodule "dotbot-yay"]
+	path = dotbot-yay
+	url = https://github.com/alexwh/dotbot-yay
+	ignore = dirty

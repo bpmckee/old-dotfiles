@@ -7,3 +7,35 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing local submodules]
+
+- pacman:
+  - bash
+  - vim
+  - xclip
+  - xorg-xbacklight
+  - xorg-xkill
+  - xorg-xrandr
+  - xpra
+  - zsh
+- yay:
+  - bspwm
+  - dart
+  - dmenu
+  - go
+  - google-chrome
+  - imagemagick
+  - neovim
+  - nordvpn-bin
+  - pavucontrol
+  - pulseaudio-jack
+  - python
+  - ranger
+  - steam
+  - steam-fonts
+  - sxhkd
+  - termite
+  - tmux
+  - ttf-dejavu
+  - ttf-material-design-icons-git
+  - ttf-roboto
+  - unzip

@@ -19,7 +19,8 @@ git submodule update --init --recursive dotbot
 cd "${BASEDIR}"
 
 # Run the "install-before-shared" config.
-"${DOTBOT_BIN_DIR}" -d "${BASEDIR}" -c "${BEFORE_SHARED_CONFIG}" "${@}"
+"${DOTBOT_BIN_DIR}" -d "${BASEDIR}" -c "${BEFORE_SHARED_CONFIG}" --plugin-dir \
+  "${BASEDIR}/dotbot-yay" "${@}"
 
 # Run the shared dotfiles installer.
 sh "${SHARED_INSTALLER}"
