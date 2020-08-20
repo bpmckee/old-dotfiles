@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -e
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SHARED_DIR="${BASEDIR}/shared-dotfiles"
+DOTBOT_DIR="${SHARED_DIR}/dotbot"
+DOTBOT_BIN_DIR="${DOTBOT_DIR}/bin/dotbot"
+BEFORE_SHARED_CONFIG="install-before-shared.conf.yaml"
+AFTER_SHARED_CONFIG="install-after-shared.conf.yaml"
+SHARED_INSTALLER="${SHARED_DIR}/install"
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+
+cd "${SHARED_DIR}"
+git submodule update --init --recursive dotbot
+
+cd "${BASEDIR}"
+
+# Run the "install-before-shared" config.
+"${DOTBOT_BIN_DIR}" -d "${BASEDIR}" -c "${BEFORE_SHARED_CONFIG}" "${@}"
+
+# Run the shared dotfiles installer.
+sh "${SHARED_INSTALLER}"
+
+# Run the "install-after-shared" config.
+"${DOTBOT_BIN_DIR}" -d "${BASEDIR}" -c "${AFTER_SHARED_CONFIG}" "${@}"

@@ -1,0 +1,3 @@
+[submodule "shared-dotfiles"]
+	path = shared-dotfiles
+	url = https://github.com/bpmckee/shared-dotfiles.git
